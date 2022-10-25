@@ -15,7 +15,7 @@ public class BouteilleBiere {
     boolean ouverte;
     public void lireEtiquette() {
 System.out.println("Bouteille de " + nom +" (" + degreAlcool +
- " degres) \nBrasserie : " + brasserie ) ;
+ " degres) \nBrasserie : " + brasserie ) ; //On initialise nos variables et on les affiche en précisant ce que c'est
 
 
 }
@@ -26,9 +26,9 @@ uneBrasserie) {
  degreAlcool = unDegre;
  brasserie = uneBrasserie;
  ouverte = false;
-}
+}//on donne un nom à nos variables qui sera affiché dans notre code
    
-public boolean Decapsuler (){
+public boolean Decapsuler (){ //fonction pour décapsuler
     if (ouverte== false){
         ouverte=true;
     }
