@@ -17,7 +17,7 @@ public class TP2_Bieres_DOMPIETRINI {
         // TODO code application logic here
         BouteilleBiere uneBiere = new BouteilleBiere("Leffe", 6.6 
 ,"Abbaye de Leffe") ;
-        uneBiere.lireEtiquette();
+        uneBiere.lireEtiquette(); //nom de la biere, on l'ajoute à la variable et on l'affiche( même action pour les trois bières
         System.out.println(uneBiere);
         BouteilleBiere autreBiere = new BouteilleBiere("Kronenbourg", 3 
 ,"Kronenbourg") ;
@@ -29,7 +29,7 @@ public class TP2_Bieres_DOMPIETRINI {
         Biere.lireEtiquette();
         System.out.println(Biere);
         
-        
+        //Ci dessous, on va permettre de comptabiliser le nombre de decapsulage pour les 3 bières
         boolean var;
         var=uneBiere.Decapsuler();
         System.out.println(var);
