@@ -35,6 +35,18 @@ public class TP2_Bieres_DOMPIETRINI {
         System.out.println(var);
         System.out.println(uneBiere);
         
+        
+        boolean var1;
+        var1=autreBiere.Decapsuler();
+        System.out.println(var1);
+        System.out.println(autreBiere);
+        
+        
+        boolean var2;
+        var2=Biere.Decapsuler();
+        System.out.println(var2);
+        System.out.println(Biere);
+        
 
     }
     
