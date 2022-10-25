@@ -15,8 +15,8 @@ public class TP2_manip_DOMPIETRINI {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Tartiflette assiette1 = new Tartiflette(500) ;
-        Tartiflette assiette2 = new Tartiflette(600) ;
+        Tartiflette assiette1 = new Tartiflette(500) ; //le nombre calories de l'assiette 1
+        Tartiflette assiette2 = new Tartiflette(600) ; //Le nombre de calories de l'assiette 2
         assiette2.nbCalories = 100;
         Tartiflette assiette3 = assiette2 ; 
         
@@ -36,7 +36,7 @@ public class TP2_manip_DOMPIETRINI {
     }
     else { 
             System.out.println(tableau[i]);
-    }
+    } //tableau pour augmenter les valeurs des calories
     }
         
     }
