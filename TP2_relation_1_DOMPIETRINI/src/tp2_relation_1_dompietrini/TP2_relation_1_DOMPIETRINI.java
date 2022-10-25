@@ -15,14 +15,15 @@ public class TP2_relation_1_DOMPIETRINI {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Voiture uneClio = new Voiture ("Clio", "Renault", 5 );
-        Voiture uneAutreClio = new Voiture ("Clio", "Renault", 5 );
+        Voiture uneClio = new Voiture ("Clio", "Renault", 5 );  
+        Voiture uneAutreClio = new Voiture ("Clio", "Renault", 5 ); 
         Voiture une2008 = new Voiture ("2008", "Peugeot", 6 );
-        Voiture uneMicra = new Voiture ("Micra", "Nissan", 4 );
+        Voiture uneMicra = new Voiture ("Micra", "Nissan", 4 );//On rajoute les voitures
         Personne bob = new Personne("Bobby", "Sixkiller");
-        Personne reno = new Personne("Reno", "Raines");
+        Personne reno = new Personne("Reno", "Raines"); // on rajoute les personnages
+        
         System.out.println("liste des voitures disponibles "+ uneClio + 
-        "\n" + uneAutreClio + "\n" + une2008 + "\n" + uneMicra ) ;
+        "\n" + uneAutreClio + "\n" + une2008 + "\n" + uneMicra ) ; //permet d'afficher le texte
         
    
     bob.ajouter_voiture(uneClio);
@@ -33,6 +34,7 @@ public class TP2_relation_1_DOMPIETRINI {
     System.out.println ("la premiere voiture de Reno est" + reno.liste_voitures [0]);
     reno.ajouter_voiture(uneMicra);
     System.out.println ("la deuxieme voiture de Reno est" + reno.liste_voitures [1]);
+    //On affiche les voitures et les propriétaires
 
 
  reno.ajouter_voiture(uneClio); 
