@@ -9,7 +9,7 @@ package tp2_manip_dompietrini;
  * @author odomp
  */
 public class Tartiflette {
-    int nbCalories;
+    int nbCalories; //Pour donner le nombre de calories
     
     public Tartiflette (int nombres){
         nbCalories = nombres;
