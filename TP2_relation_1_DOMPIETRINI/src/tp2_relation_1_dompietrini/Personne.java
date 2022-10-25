@@ -19,10 +19,10 @@ public class Personne {
     Voiture [] liste_voitures;
     
     
-    public Personne (String UnNom, String UnPrenom, int nombresVoitures ){
+    public Personne (String UnNom, String UnPrenom){
         nom = UnNom;
         prenom =UnPrenom;
-        nbVoitures = nombresVoitures;
+        
         
         liste_voitures = new Voiture [3]; 
     }
