@@ -35,7 +35,7 @@ public class TP2_manip_DOMPIETRINI {
             System.out.println(tableau[i]);
     }
     else { 
-            System.out.print(tableau[i]);
+            System.out.println(tableau[i]);
     }
     }
         
