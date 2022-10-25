@@ -12,8 +12,11 @@ public class Voiture {
     String Marque;
     int PuissanceCV;
     String Modele;
+    Personne proprietaire;
+    //public convertisseur(){
+            //nbConversions =0;
     
-    public Voiture (String UneMarque, int UnePuissance, String UnModele){
+    public Voiture (String UnModele, String UneMarque, int UnePuissance){ //On accorde le modele, la marque et la puissance selon ce qu'on obtiendra
         Marque = UneMarque;
         PuissanceCV = UnePuissance;
         Modele=UnModele;
