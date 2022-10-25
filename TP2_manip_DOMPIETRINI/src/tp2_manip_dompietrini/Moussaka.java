@@ -9,7 +9,7 @@ package tp2_manip_dompietrini;
  * @author odomp
  */
 public class Moussaka {
-    int nbCalories;
+    int nbCalories; //On note le nombre de calories en int, car on aura un nombre
     
     public Moussaka (int nombres) {
            nbCalories= nombres;
