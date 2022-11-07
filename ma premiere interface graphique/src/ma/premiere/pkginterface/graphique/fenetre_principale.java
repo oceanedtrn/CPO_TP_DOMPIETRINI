@@ -30,10 +30,16 @@ public class fenetre_principale extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jComboBox1 = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        ZonePrenom = new javax.swing.JTextField();
+        Bouton1 = new javax.swing.JButton();
+        Prenom = new javax.swing.JTextField();
+        Bouton2 = new javax.swing.JButton();
+        age = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -41,38 +47,62 @@ public class fenetre_principale extends javax.swing.JFrame {
 
         jLabel2.setText("Au revoir");
 
-        jButton1.setText("jButton1");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Bouton1.setBackground(new java.awt.Color(153, 0, 153));
+        Bouton1.setForeground(new java.awt.Color(153, 255, 0));
+        Bouton1.setText("jButton1");
+        Bouton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Bouton1ActionPerformed(evt);
             }
         });
 
-        ZonePrenom.setText("jTextField1");
-        ZonePrenom.addActionListener(new java.awt.event.ActionListener() {
+        Prenom.setBackground(new java.awt.Color(102, 0, 255));
+        Prenom.setText("jTextField1");
+        Prenom.setCaretColor(new java.awt.Color(1, 0, 0));
+        Prenom.setDisabledTextColor(new java.awt.Color(100, 140, 140));
+        Prenom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ZonePrenomActionPerformed(evt);
+                PrenomActionPerformed(evt);
             }
         });
+
+        Bouton2.setText("jButton1");
+        Bouton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Bouton2ActionPerformed(evt);
+            }
+        });
+
+        age.setText("jTextField1");
+
+        jLabel3.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(60, 60, 60)
+                .addComponent(Bouton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(83, 83, 83))
             .addGroup(layout.createSequentialGroup()
                 .addGap(146, 146, 146)
-                .addComponent(jButton1)
-                .addContainerGap(179, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
+                .addComponent(Bouton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(179, 179, 179))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ZonePrenom, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(36, 36, 36))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3)
+                .addGap(108, 108, 108)
+                .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -80,26 +110,41 @@ public class fenetre_principale extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(ZonePrenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(Prenom, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(56, 56, 56)
-                .addComponent(jButton1)
-                .addGap(36, 36, 36)
-                .addComponent(jLabel2)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addComponent(Bouton1)
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(Bouton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(age, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addGap(44, 44, 44))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String nomuser = ZonePrenom.getText();
-        jLabel1.setText("bouton cliqué");
+    private void Bouton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton1ActionPerformed
+        String nomuser = Prenom.getText();
+        jLabel1.setText("Merci d'avoir donné votre nom");
+        jLabel2.setText( "bonjour " +nomuser+ " ");
+        
 // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_Bouton1ActionPerformed
 
-    private void ZonePrenomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ZonePrenomActionPerformed
+    private void PrenomActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PrenomActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ZonePrenomActionPerformed
+    }//GEN-LAST:event_PrenomActionPerformed
+
+    private void Bouton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bouton2ActionPerformed
+       String ageuser = age.getText();
+       
+       jLabel3.setText( "Vous avez " +ageuser+ " ans");
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Bouton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -137,10 +182,14 @@ public class fenetre_principale extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ZonePrenom;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton Bouton1;
+    private javax.swing.JButton Bouton2;
+    private javax.swing.JTextField Prenom;
+    private javax.swing.JTextField age;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     // End of variables declaration//GEN-END:variables
 
 }
