@@ -9,5 +9,19 @@ package tp4_oceanedompietrini;
  * @author odomp
  */
 public class Personnage {
-    
+    String nom;
+    int pointdevie;
+     public Personnage(String n, int i){
+            nom=n;
+            pointdevie = i;
 }
+     
+      @Override
+public String toString() {
+String chaine_a_retourner;
+chaine_a_retourner = ("La classe est " +nom+ " à un niveau de point de vie de " +pointdevie ); 
+return chaine_a_retourner ;
+}
+
+}
+   

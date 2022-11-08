@@ -8,6 +8,12 @@ package tp4_oceanedompietrini;
  *
  * @author odomp
  */
-public class Guerrier {
-    
+
+public class Guerrier extends Personnage{
+    boolean cheval;
+    public Guerrier(String n, int i, boolean a){
+        super(n, i);
+        cheval = a;}
+       
 }
+

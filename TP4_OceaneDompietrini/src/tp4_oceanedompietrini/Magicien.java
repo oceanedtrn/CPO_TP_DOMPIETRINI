@@ -8,6 +8,10 @@ package tp4_oceanedompietrini;
  *
  * @author odomp
  */
-public class Magicien {
+public class Magicien extends Personnage {
     
+    boolean cheval2;
+    public Magicien(String n, int i, boolean a){
+        super(n, i);
+        cheval2 = a;}
 }
