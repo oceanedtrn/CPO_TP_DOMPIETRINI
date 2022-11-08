@@ -4,6 +4,8 @@
  */
 package tp4_oceanedompietrini;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author odomp
@@ -26,6 +28,19 @@ public class TP4_OceaneDompietrini {
         System.out.println (baton2);
         
         
+       ArrayList <Arme> n_Arme = new ArrayList <Arme>();
+       n_Arme.add (Epée1);
+       n_Arme.add (Epée2);
+       n_Arme.add (baton1);
+       n_Arme.add (baton2);
+       
+       int taille = n_Arme.size();
+        int longueur=taille-1;
+        for (int i=0; i<longueur; i++){
+        System.out.print(n_Arme.get(i)+", ");
+}
+System.out.println(n_Arme.get(taille-1));
+       
         
         
         
