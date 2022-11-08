@@ -8,6 +8,6 @@ package tp4_oceanedompietrini;
  *
  * @author odomp
  */
-public class Baton {
+public class Guerrier {
     
 }

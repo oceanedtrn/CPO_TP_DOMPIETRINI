@@ -8,16 +8,6 @@ package tp4_oceanedompietrini;
  *
  * @author odomp
  */
-
-public class Epée extends Arme{
-    int indice;
-    public Epée(String n, int i, int j){
-        super(n, i);
-        indice=j;
-        if (j>100 ){
-            indice = 100;
-        }else{
-            indice = j;
-        }
-    }
+public class Magicien {
+    
 }
