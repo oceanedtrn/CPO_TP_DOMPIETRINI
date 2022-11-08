@@ -10,8 +10,8 @@ package tp4_oceanedompietrini;
  */
 public class Magicien extends Personnage {
     
-    boolean cheval2;
+    boolean confirmé;
     public Magicien(String n, int i, boolean a){
         super(n, i);
-        cheval2 = a;}
+        confirmé = a;}
 }
