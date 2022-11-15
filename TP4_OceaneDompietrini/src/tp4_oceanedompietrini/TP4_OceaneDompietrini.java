@@ -21,11 +21,11 @@ public class TP4_OceaneDompietrini {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Epée Epée1 = new Epée( "Excalibur", 7, 5);
-        Epée Epée2=new Epée ( "Durandal", 4, 7);
+        Epée Epée1 = new Epée( "Excalibur", 7 , 5);
+        Epée Epée2=new Epée ( "Durandal", 4 , 7);
         
-        Baton baton1 = new Baton( " Chêne", 4, 5);
-        Baton baton2 = new Baton( " Charme", 5, 6);
+        Baton baton1 = new Baton( " Chêne", 4 , 5);
+        Baton baton2 = new Baton( " Charme", 5 , 6);
         
         System.out.println (baton1);
         System.out.println (Epée2);
@@ -42,13 +42,13 @@ public class TP4_OceaneDompietrini {
        int taille = n_Arme.size();
         int longueur=taille-1;
         for (int i=0; i<longueur; i++){
-        System.out.print(n_Arme.get(i)+", ");
+        System.out.print(n_Arme.get(i)+", ");}
         
-        Magicien Magicien1 = new Magicien ( "Gandalf", 65, true);
-        Magicien Magicien2 = new Magicien ( "Garcimore", 44, false);
+        Magicien Magicien1 = new Magicien ( "Gandalf", 65 , true);
+        Magicien Magicien2 = new Magicien ( "Garcimore", 44 , false);
         
-        Guerrier Guerrier1 = new Guerrier ( "Conan", 78, false);
-        Guerrier Guerrier2 = new Guerrier ( "Lannister", 45, true);
+        Guerrier Guerrier1 = new Guerrier ( "Conan", 78 , false);
+        Guerrier Guerrier2 = new Guerrier ( "Lannister", 45 , true);
         
         
         System.out.println (Magicien1);
@@ -70,12 +70,43 @@ public class TP4_OceaneDompietrini {
        System.out.print(n_Personnage.get(i2)+", ");
         
 }
+       Guerrier Guerrier3= new Guerrier ("Jeff", 100 , false);
+       Baton Baton3 = new Baton ("bois", 3 , 2);
+       Magicien Magicien3 = new Magicien ("Yvan", 50 , false);
+       Baton Baton4 = new Baton (" hêtre", 2 , 5);
+       Baton Baton5 = new Baton ("pin", 1 , 3);
+       Epée Epée3= new Epée ( "Oli", 5 , 8);
+       Epée Epée4= new Epée ( "Dura", 8 ,7);
+       Epée Epée5= new Epée ( "Poi", 5 , 8);
+       
+       
+        
+       Guerrier3.ajouter_armes(Baton3);
+       Guerrier3.ajouter_armes(Epée3);
+       Guerrier3.ajouter_armes(Epée4);
+       
+       Magicien3.ajouter_armes(Baton4);
+       Magicien3.ajouter_armes(Baton5);
+       Magicien3.ajouter_armes(Epée5);
+       
+       System.out.println (Magicien3);
+        
+       System.out.println (Guerrier3);
+       System.out.println (Baton3);
+       System.out.println (Baton4);
+       System.out.println (Baton5);
+       System.out.println (Epée3);
+       System.out.println (Epée4);
+       System.out.println (Epée5);
+       
         
 System.out.println(n_Arme.get(taille-1));
 System.out.println(n_Personnage.get(taille-1));
        
 
-        }
+        Guerrier3.equipement ("oli");
+        System.out.println(Guerrier3);
+        
         
         
         
