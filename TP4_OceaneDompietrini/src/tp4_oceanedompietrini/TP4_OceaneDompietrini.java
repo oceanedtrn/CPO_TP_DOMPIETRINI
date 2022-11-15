@@ -4,6 +4,9 @@
  */
 package tp4_oceanedompietrini;
 
+import Personnages.Personnage;
+import Personnages.Magicien;
+import Personnages.Guerrier;
 import Armes.*;
 import java.util.ArrayList;
 
