@@ -141,7 +141,28 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                 
 	    }
             
-            
+            public void tasserLigne (int ligne, int colonne){
+                for(int i=0; i<ligne; i++ ){
+                     grille[i+1][colonne].jetonCourant=grille [i][colonne].jetonCourant; 
+                     grille[i][colonne].jetonCourant = null; 
+            }
+            }
            
+             boolean colonneRemplie( int colonne){
+                 return grille[5][colonne].jetonCourant!=null ;
+             }
+             
+             public boolean placerTrouNoir(int ligne , int colone ){ 
+                 boolean trou=false;
+                 if (grille[ligne][colone].trouNoir==false){ 
+                     grille[ligne][colone].trouNoir=true;
+                     trou = true;
+                 }
+    
+                 return trou;
+             }
+
 	}
+
+
 
