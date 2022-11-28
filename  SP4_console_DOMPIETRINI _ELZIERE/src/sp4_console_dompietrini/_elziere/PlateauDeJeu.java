@@ -56,13 +56,34 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
 	    public void afficherGrilleSurConsole(){
 	        for (int i=5 ; i>=0 ; i--){
 	            for (int j=0 ; j<7 ; j++){
-	                
+	              if ((grille[i][j].lireCouleurDuJeton()== "vide")&&
+                        grille[i][j].avoirTrouNoir == false &&
+                        grille[i][j].avoirDesintegrateur == false)  {
+                    System.out.print("_ "); // s'il n'y a ni de TN et D alors la case est vide on la note _
+                }
+                if (grille[i][j].lireCouleurDuJeton()== "rouge"){ // si la cellule est occupé par un jeton rouge
+                    System.out.print("R"); // R apparait dans la cellule concerné 
+                }
+                
+                if (grille[i][j].lireCouleurDuJeton()== "jaune"){ // si la cellule est occupé par un jeton jaune
+                    System.out.print("J"); // J apparait dans la cellule concerné 
+                    
+                }
+                if(grille[i][j].avoirTrouNoir == true) {
+                    System.out.print(" O");
+                }
+                if((grille[i][j].avoirDesintegrateur == true && grille[i][j].avoirTrouNoir==false )) { 
+                    System.out.print(" D");
+                }
+                
+            
+            }
+              System.out.println();     
 	                          
                     }
 	    }
 	        
-            }
-	    
+            
 	    
 	    public String lireCouleurDuJeton(int ligne, int colonne){
 	        return grille[ligne][colonne].lireCouleurDuJeton();
@@ -158,7 +179,18 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
              grille[ligne][colonne].supprimerTrouNoir();
 }
              
-
+            public void placerDesintegrateur ( int ligne, int colonne){
+                grille [ligne][colonne].placerDesintegrateurs();
+                
+            }
+            public void supprimerJeton (int ligne, int colonne){
+                grille [ligne][colonne].supprimerJeton();
+                
+            }
+            public Jeton recupererJeton (int ligne, int colonne){
+                Jeton t= grille[ligne][colonne].recupererJeton();
+                return t ;
+            }
 
 
 
