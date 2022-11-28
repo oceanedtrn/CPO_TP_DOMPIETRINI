@@ -154,7 +154,7 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                 
 	    }
             
-            public void tasserLigne (int ligne, int colonne){
+            public void tassercolonne (int ligne, int colonne){
                 for(int i=0; i<ligne; i++ ){
                      grille[i+1][colonne].jetonCourant=grille [i][colonne].jetonCourant; 
                      grille[i][colonne].jetonCourant = null; 
