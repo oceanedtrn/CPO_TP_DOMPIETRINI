@@ -14,10 +14,11 @@ public class PlateauDeJeu { //on crée notre tableau
 public PlateauDeJeu (){
     for (int i=0; i<6; i++){ //lignes
         for (int j=0; j<7; j++){ //colonnes
-            grille [i][j] = new CelluleDeGrille;
+            grille [i][j] = new CelluleDeGrille();
         }
     }
 }
+
 public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
 	        for (int i=0; i<6 ; i++){ // parcours ligne
 	            if (grille [i][colonne].jetonCourant==null){ // Nombre jeton nul dans case
@@ -56,7 +57,7 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
 	        for (int i=5 ; i>=0 ; i--){
 	            for (int j=0 ; j<7 ; j++){
 	                if (grille[i][j].jetonCourant==null){
-	                    System.out.print(" V");
+	                    System.out.print(" j");
 	                }
 	                else {
 	                    if (lireCouleurDuJeton(i,j)=="rouge"){
@@ -154,8 +155,8 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
              
              public boolean placerTrouNoir(int ligne , int colone ){ 
                  boolean trou=false;
-                 if (grille[ligne][colone].trouNoir==false){ 
-                     grille[ligne][colone].trouNoir=true;
+                 if (grille[ligne][colone].avoirTrouNoir==false){ 
+                     grille[ligne][colone].avoirTrouNoir=true;
                      trou = true;
                  }
     
