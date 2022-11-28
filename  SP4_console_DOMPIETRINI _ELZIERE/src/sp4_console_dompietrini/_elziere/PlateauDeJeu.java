@@ -161,8 +161,23 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
     
                  return trou;
              }
+            // public boolean supprimerTrouNoir(int ligne, int colonne){
+                // boolean trou = false;
+                // if (grille [ligne][colonne].trouNoir == true)
+                 
+             //}
+             
+             
 
-	}
+
+
+
+
+
+
+}
+
+	
 
 
 
