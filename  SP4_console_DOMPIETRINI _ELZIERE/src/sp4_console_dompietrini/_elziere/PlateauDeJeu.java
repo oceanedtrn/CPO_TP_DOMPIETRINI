@@ -56,21 +56,12 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
 	    public void afficherGrilleSurConsole(){
 	        for (int i=5 ; i>=0 ; i--){
 	            for (int j=0 ; j<7 ; j++){
-	                if (grille[i][j].jetonCourant==null){
-	                    System.out.print(" j");
-	                }
-	                else {
-	                    if (lireCouleurDuJeton(i,j)=="rouge"){
-	                        System.out.print(ANSI_RED+" R"+ANSI_RESET);
-	                    }
-	                    else System.out.print(ANSI_YELLOW+" J"+ANSI_RESET);
-	                }
-	            }
-	            System.out.println("\n");          
-	        }
+	                
+	                          
+                    }
 	    }
 	        
-	    
+            }
 	    
 	    
 	    public String lireCouleurDuJeton(int ligne, int colonne){
@@ -153,21 +144,19 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                  return grille[5][colonne].jetonCourant!=null ;
              }
              
-             public boolean placerTrouNoir(int ligne , int colone ){ 
-                 boolean trou=false;
-                 if (grille[ligne][colone].avoirTrouNoir==false){ 
-                     grille[ligne][colone].avoirTrouNoir=true;
-                     trou = true;
+             public void placerTrouNoir(int ligne , int colone ){ 
+                
+                 
+                     grille[ligne][colone].placerTrouNoir();
+                     
                  }
     
-                 return trou;
-             }
-            // public boolean supprimerTrouNoir(int ligne, int colonne){
-                // boolean trou = false;
-                // if (grille [ligne][colonne].trouNoir == true)
                  
-             //}
              
+            public void supprimerTrouNoir (int ligne, int colonne){
+
+             grille[ligne][colonne].supprimerTrouNoir();
+}
              
 
 
