@@ -83,13 +83,13 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                     }
 	    }
 	        
-            
+            public 
 	    
 	    public String lireCouleurDuJeton(int ligne, int colonne){
 	        return grille[ligne][colonne].lireCouleurDuJeton();
 	    }
 	    
-	    public boolean etreGagnantePourJoueur(Joueur unJoueur){
+	    public boolean etreGagnantePourCouleur(Joueur unJoueur){
 	        boolean resultat=false;
 	        
                 for (int i=0; i<4 ; i++){      //ici on verifie ligne gagnante  
@@ -165,6 +165,11 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                  return grille[5][colonne].jetonCourant!=null ;
              }
              
+             public void presenceTrouNoir (int ligne, int colonne){
+
+             grille[ligne][colonne].presenceTrouNoir();
+             }
+             
              public void placerTrouNoir(int ligne , int colone ){ 
                 
                  
@@ -177,7 +182,13 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
             public void supprimerTrouNoir (int ligne, int colonne){
 
              grille[ligne][colonne].supprimerTrouNoir();
-}
+            }
+
+            
+            public void presenceDesintegrateur (int ligne, int colonne){
+
+             grille[ligne][colonne].presenceDesintegrateur();
+            }
              
             public void placerDesintegrateur ( int ligne, int colonne){
                 grille [ligne][colonne].placerDesintegrateurs();
