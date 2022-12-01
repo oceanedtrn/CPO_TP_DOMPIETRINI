@@ -83,7 +83,16 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                     }
 	    }
 	        
-            public 
+            public boolean presenceJeton (int ligne ,int colonne){ 
+       
+       if (grille[ligne][colonne].jetonCourant==null){ 
+           return false;
+       }
+       else {
+       return true; 
+                   }
+           
+       }
 	    
 	    public String lireCouleurDuJeton(int ligne, int colonne){
 	        return grille[ligne][colonne].lireCouleurDuJeton();
