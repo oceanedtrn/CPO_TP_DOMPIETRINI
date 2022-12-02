@@ -22,12 +22,12 @@ public class CelluleDeGrille {
     }
     
      
-    public boolean presenceJeton(Jeton unJeton){
+    public boolean presenceJeton(){
         if (jetonCourant==null){
-            jetonCourant=unJeton;
-            return true;
+            
+            return false;
         }
-        else return false;
+        else return true;
         
     }
     

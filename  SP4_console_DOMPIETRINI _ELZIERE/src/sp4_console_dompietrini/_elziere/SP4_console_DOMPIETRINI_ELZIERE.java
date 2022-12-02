@@ -15,6 +15,8 @@ public class SP4_console_DOMPIETRINI_ELZIERE {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        
+        
     }
     
 }
