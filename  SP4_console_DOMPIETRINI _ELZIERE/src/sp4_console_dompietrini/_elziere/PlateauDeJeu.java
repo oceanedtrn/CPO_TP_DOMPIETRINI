@@ -83,14 +83,11 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                     }
 	    }
 	        
-            public boolean presenceJeton (int ligne ,int colonne){ 
+            public void presenceJeton (int ligne ,int colonne){ 
+                grille [ligne][colonne].presenceJeton();
+            
        
-       if (grille[ligne][colonne].jetonCourant==null){ 
-           return false;
-       }
-       else {
-       return true; 
-                   }
+       
            
        }
 	    
