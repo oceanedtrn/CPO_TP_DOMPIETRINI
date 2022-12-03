@@ -9,13 +9,26 @@ package sp4_console_dompietrini._elziere;
  * @author odomp
  */
 public class SP4_modeGraphique_DOMPIETRINI_ELZIERE extends javax.swing.JFrame {
-
+Joueur []listeJoueurs = new Joueur[2];
+Joueur joueurCourant;
+PlateauDeJeu plateau;
     /**
      * Creates new form SP4_modeGraphique_DOMPIETRINI_ELZIERE
      */
-    public SP4_modeGraphique_DOMPIETRINI_ELZIERE() {
+    public SP4_modeGraphique_DOMPIETRINI_ELZIERE(int i, int j) {
         initComponents();
+        panneau_info_joueur.setVisible(false);
+        panneau_info_partie.setVisible(false);
+        
+        for (i=5; i>=0; i--){
+        for (j=0; j<7; j++){   
+            celluleGraphique cellGraph = new celluleGraphique(plateau.grille[i][j]);
+            panneau_grille.add(cellGraph);
+        } 
+        }
     }
+
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -73,7 +86,7 @@ public class SP4_modeGraphique_DOMPIETRINI_ELZIERE extends javax.swing.JFrame {
         panneau_creation_partie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setText("Nom joueur2:");
-        panneau_creation_partie.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
+        panneau_creation_partie.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         jLabel2.setText("Nom joueur1:");
         panneau_creation_partie.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
@@ -83,11 +96,16 @@ public class SP4_modeGraphique_DOMPIETRINI_ELZIERE extends javax.swing.JFrame {
                 nom_Joueur1ActionPerformed(evt);
             }
         });
-        panneau_creation_partie.add(nom_Joueur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, -1, -1));
-        panneau_creation_partie.add(nom_Joueur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, -1, -1));
+        panneau_creation_partie.add(nom_Joueur1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 100, -1));
+        panneau_creation_partie.add(nom_Joueur2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 40, 100, -1));
 
         btn_start.setText("Démarrer partie");
-        panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 30, -1, 40));
+        btn_start.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_startActionPerformed(evt);
+            }
+        });
+        panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, 40));
 
         getContentPane().add(panneau_creation_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 120, 290, 100));
 
@@ -185,6 +203,12 @@ public class SP4_modeGraphique_DOMPIETRINI_ELZIERE extends javax.swing.JFrame {
     private void nom_Joueur1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_Joueur1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_nom_Joueur1ActionPerformed
+
+    private void btn_startActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_startActionPerformed
+       
+        panneau_info_joueur.setVisible(true);
+        panneau_info_partie.setVisible(true);
+    }//GEN-LAST:event_btn_startActionPerformed
 
     /**
      * @param args the command line arguments
