@@ -13,9 +13,11 @@ public class SP4_console_DOMPIETRINI_ELZIERE {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void fmain(String[] args) {
         // TODO code application logic here
+        Partie partie1 = new Partie(new Joueur("a"), new Joueur("b"));
         
+        //partie1.lancerPartie();
         
     }
     

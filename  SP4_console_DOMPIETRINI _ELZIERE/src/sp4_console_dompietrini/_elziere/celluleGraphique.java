@@ -4,6 +4,8 @@
  */
 package sp4_console_dompietrini._elziere;
 
+import java.awt.Graphics;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 
 /**
@@ -12,11 +14,17 @@ import javax.swing.JButton;
  */
 public class celluleGraphique extends JButton{
     CelluleDeGrille celluleAssociee;
+    ImageIcon img_vide = new javax.swing.ImageIcon()(getClass().getResource("/images/celluleVide.png"));
     
     
     public celluleGraphique (CelluleDeGrille uneCellule){
         celluleAssociee = uneCellule;
     }
     
-    
+    @Override
+    public void paintComponent (Graphics G){
+      super.paintComponent(G);
+      setIcon(img_vide);
+      
+    }
 }

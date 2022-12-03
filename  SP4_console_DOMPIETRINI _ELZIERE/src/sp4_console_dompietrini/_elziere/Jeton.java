@@ -11,7 +11,7 @@ package sp4_console_dompietrini._elziere;
 public class Jeton {
     String couleur;
     
-    private Jeton (String couleurJeton){ // initialise l'attribut couleur du jeton
+    Jeton (String couleurJeton){ // initialise l'attribut couleur du jeton
         couleur= couleurJeton;
         
     }

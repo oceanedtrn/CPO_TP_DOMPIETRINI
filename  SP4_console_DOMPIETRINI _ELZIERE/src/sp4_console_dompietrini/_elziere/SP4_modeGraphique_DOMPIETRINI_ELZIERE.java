@@ -15,13 +15,13 @@ PlateauDeJeu plateau;
     /**
      * Creates new form SP4_modeGraphique_DOMPIETRINI_ELZIERE
      */
-    public SP4_modeGraphique_DOMPIETRINI_ELZIERE(int i, int j) {
+    public SP4_modeGraphique_DOMPIETRINI_ELZIERE() {
         initComponents();
         panneau_info_joueur.setVisible(false);
         panneau_info_partie.setVisible(false);
         
-        for (i=5; i>=0; i--){
-        for (j=0; j<7; j++){   
+        for (int i=5; i>=0; i--){
+        for (int j=0; j<7; j++){   
             celluleGraphique cellGraph = new celluleGraphique(plateau.grille[i][j]);
             panneau_grille.add(cellGraph);
         } 
