@@ -9,9 +9,10 @@ import java.util.Random;
  * @author odomp
  */
 public class Partie {
-     private Joueur[] listeJoueurs;
+    private Joueur[] listeJoueurs;
     private Joueur joueurCourant;
     PlateauDeJeu plateau;
+    private Joueur[] ListeJoueurs;
     
     
     public Partie(Joueur Joueur1, Joueur Joueur2){
@@ -21,28 +22,27 @@ public class Partie {
         }
     
     public void  attribuerCouleurAuxJoueurs(){
-        Random r= new Random ();
-        int c=r.nextInt(1);
-        if (c== 0){
-        listeJoueurs [0].affecterCouleur("rouge");
-        listeJoueurs [1].affecterCouleur("jaune");
-    }
-        if (c== 1){
-    listeJoueurs [0].affecterCouleur("rouge");
-        listeJoueurs [1].affecterCouleur("jaune");
+        Random r = new Random();
+        int c = r.nextInt(1);
+        if (c == 0){
+            listeJoueurs [0].affecterCouleur("rouge");
+            listeJoueurs [1].affecterCouleur("jaune");
+        }if (c == 1){
+            listeJoueurs [0].affecterCouleur("jaune");
+            listeJoueurs [1].affecterCouleur("rouge");
         }
     }
-  public void creerEtAffecterJeton(Joueur j){
-      String couleur = j.donnerCouleur();
-      for (int i=0 ; i <=30; i++){
-          j.ajouterJeton(new jeton( couleur));
-      }
-  }
-  
+    
+    public void creerEtAffecterJeton(Joueur joueur) {
+        Jeton[] jetons = new Jeton[30];
+        for (int i = 0; i < 30; i++) {
+            jetons[i] = new Jeton(joueur.couleur);
+            joueur.ajouterJeton(jetons[i]);
+        }
+    }
  
-
     public void placerTrousNoirsEtDesintegrateurs() {
-        Random l = new Random();
+    Random l = new Random();
         Random c = new Random();
         for (int i = 0; i < 3; i++) {
             int ligne = l.nextInt(0, 6);
@@ -73,14 +73,12 @@ public class Partie {
             }
         }
     }
-
+ 
     public void initialiserPartie() {
-        attribuerCouleursAuxJoueurs();
+        attribuerCouleurAuxJoueurs();
         creerEtAffecterJeton(ListeJoueurs[0]);
         creerEtAffecterJeton(ListeJoueurs[1]);
         placerTrousNoirsEtDesintegrateurs();
     }
-
-    
-    
+   
 }
