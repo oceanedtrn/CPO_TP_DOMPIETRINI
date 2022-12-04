@@ -84,11 +84,11 @@ public class Partie {
         
         System.out.println("Donner le nom du premier joueur");
         String nomjoueur1= saisieUtilisateur.next();
-        listeJoueurs[0].donnerNom(nomjoueur1);
+        listeJoueurs[0].Nom(nomjoueur1);
         
         System.out.println("Donner le nom du deuxieme joueur");
         String nomjoueur2= saisieUtilisateur.next();
-        listeJoueurs[0].donnerNom(nomjoueur2);
+        listeJoueurs[0].Nom(nomjoueur2);
         
         Random r= new Random();
         int joueur= r.nextInt(1);
@@ -136,7 +136,7 @@ public class Partie {
                 
             }
             String couleur= joueurCourant.donnerCouleur();
-            victoire = plateau.etreGagnantePourJoueur(joueurCourant);
+            victoire = plateau.etreGagnantePourJoueur(couleur);
         }
         if (choix ==2){ //retirer un jeton
             
