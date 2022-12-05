@@ -18,11 +18,11 @@ public PlateauDeJeu (){
         }
     }
 }
- 
-public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
+
+public boolean ajouterJetonsDansColonne(Jeton joueurCourant,int colonne){
                    for (int i=0; i<6 ; i++){ // parcours ligne
                        if (grille [i][colonne].jetonCourant==null){ // Nombre jeton nul dans case
-                           grille [i][colonne].affecterJeton(jeton1); // si oui, on met jeton
+                           grille [i][colonne].affecterJeton(joueurCourant); // si oui, on met jeton
                           
                            return true;
                           
@@ -50,7 +50,7 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                    }
                   
                }
-              
+             
                
                public void afficherGrilleSurConsole(){
                    for (int i=5 ; i>=0 ; i--){
@@ -89,14 +89,14 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                  else {
                  return true;
                 }
-          
+         
        }
                
                public String lireCouleurDuJeton(int ligne, int colonne){
                    return grille[ligne][colonne].lireCouleurDuJeton();
                }
               
-               public boolean etreGagnantePourJoueur(String unJoueur){
+               public boolean etreGagnantePourCouleur(String uneCouleur){
                    boolean resultat=false;
                   
                 for (int i=0; i<4 ; i++){      //ici on verifie ligne gagnante 
@@ -161,8 +161,8 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                 
                }
            
-            public void tassercolonne ( int colonne){
-                for(int i=0; i<colonne; i++ ){
+            public void tassercolonne (int ligne, int colonne){
+                for(int i=0; i<ligne; i++ ){
                      grille[i+1][colonne].jetonCourant=grille [i][colonne].jetonCourant;
                      grille[i][colonne].jetonCourant = null;
             }
@@ -174,7 +174,7 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
             
                
              public boolean presenceTrouNoir (int ligne, int colonne){
-                 if (presenceTrouNoir(ligne,colonne) == true) {
+                 if  (grille[ligne][colonne].presenceTrouNoir()==true){
                      return true;
                  }else{
                      return false;
@@ -194,7 +194,7 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
                  
              
             public void supprimerTrouNoir (int ligne, int colonne){
- 
+
              grille[ligne][colonne].supprimerTrouNoir();
 }
             
@@ -208,13 +208,12 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
             }
             
             public boolean presenceDesintegrateur (int ligne, int colonne){
-                 if (presenceDesintegrateur(ligne,colonne) == true) {
-                     return true;
+                if( grille [ligne][colonne].presenceDesintegrateur()==true){
+                  return true;
                  }else{
                      return false;
-                 }
             }
-            
+            }
             
             public Jeton recupererJeton (int ligne, int colonne){
                 Jeton t= grille[ligne][colonne].recupererJeton();
@@ -225,4 +224,3 @@ public boolean ajouterJetonsDansColonne(Jeton jeton1,int colonne){
  
 }
      
-    
