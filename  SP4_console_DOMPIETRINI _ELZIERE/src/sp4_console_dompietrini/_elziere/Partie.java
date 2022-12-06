@@ -129,6 +129,13 @@ public class Partie {
 
                         }
 
+                        boolean res2 = plateau.presenceDesintegrateur(lig, colonne);
+                        if (res2 == true) {
+                            plateau.supprimerDesintegrateur(lig, colonne);
+                            plateau.supprimerJeton(lig, colonne);
+                            
+
+                        }
                     } else {
                         System.out.println("Colonne pleine, en choisir une autre");
                     }
