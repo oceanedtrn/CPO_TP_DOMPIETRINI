@@ -19,17 +19,19 @@ public PlateauDeJeu (){
     }
 }
 
-public boolean ajouterJetonsDansColonne(Jeton joueurCourant,int colonne){
+public int  ajouterJetonsDansColonne(Joueur joueurCourant,int colonne){
                    for (int i=0; i<6 ; i++){ // parcours ligne
                        if (grille [i][colonne].jetonCourant==null){ // Nombre jeton nul dans case
-                           grille [i][colonne].affecterJeton(joueurCourant); // si oui, on met jeton
+                           grille [i][colonne].affecterJeton(joueurCourant.jouerJeton()); // si oui, on met jeton
                           
-                           return true;
+                           return i;
                           
                        }                 
                 }
-                   return false;                
+                   return -1;                
                }
+
+
               
                public boolean grilleRemplie(){
                    int colonne=0;
@@ -214,6 +216,12 @@ public boolean ajouterJetonsDansColonne(Jeton joueurCourant,int colonne){
                      return false;
             }
             }
+           
+            
+             public void supprimerDesintegrateur (int ligne, int colonne){
+
+             grille[ligne][colonne].supprimerDesintegrateur();
+}
             
             public Jeton recupererJeton (int ligne, int colonne){
                 Jeton t= grille[ligne][colonne].recupererJeton();

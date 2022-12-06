@@ -17,7 +17,7 @@ public class SP4_console_DOMPIETRINI_ELZIERE {
         // TODO code application logic here
         Partie partie1 = new Partie(new Joueur("a"), new Joueur("b"));
         
-        //partie1.lancerPartie();
+        partie1.lancerPartie();
         
     }
     

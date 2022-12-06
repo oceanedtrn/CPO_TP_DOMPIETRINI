@@ -9,19 +9,31 @@ import java.util.ArrayList;
  * @author odomp
  */
 public class Joueur {
-     private String nom;
+    private String nom;
     String couleur;
     private ArrayList <Jeton> reserveJetons = new ArrayList <Jeton>();
-    private int nombreDesintegrateurs;
+    int nombreDesintegrateurs;
     
     
     public Joueur (String n) {
       nom=n;
       nombreDesintegrateurs=0;
-      reserveJetons= null;}
+     }
+    
+    public void leNom(String le_n){
+        nom = le_n;
+    }
+    
+    public String afficherNom (){
+        return nom;
+    }
     
     public void affecterCouleur(String c){
       couleur=c;
+    }
+    
+    public String afficherCouleur(){
+        return couleur;
     }
     
     public int nombreDeJetons (){
@@ -34,8 +46,8 @@ public class Joueur {
     }
     
     public Jeton jouerJeton() {
-       int n = nombreDeJetons();
-       Jeton j =  reserveJetons.remove(n);
+      // int n = nombreDeJetons();
+       Jeton j =  reserveJetons.remove(0);
        return j;
        
     }
@@ -43,19 +55,17 @@ public class Joueur {
     public void obtenirDesintegrateur() {
        nombreDesintegrateurs+=1;
     }
+
+    public int getNombreDesintegrateurs() {
+        return nombreDesintegrateurs;
+    }
+    
     
     public void utiliserDesintegrateur() {
        nombreDesintegrateurs-=1;  
     }
-    
-    public String donnerCouleur(){
-        return couleur; 
-    }
 
-    String retournerNom() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+    
+
+   
 }
-
-    
-

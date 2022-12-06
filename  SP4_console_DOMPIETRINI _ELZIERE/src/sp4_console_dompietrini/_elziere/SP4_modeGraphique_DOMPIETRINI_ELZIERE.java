@@ -84,7 +84,7 @@ PlateauDeJeu plateau;
 
         panneau_grille.setBackground(new java.awt.Color(255, 255, 255));
         panneau_grille.setLayout(new java.awt.GridLayout(6, 7));
-        getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 672, 576));
+        getContentPane().add(panneau_grille, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, 672, 576));
 
         panneau_creation_partie.setBackground(new java.awt.Color(204, 255, 204));
         panneau_creation_partie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -186,7 +186,7 @@ PlateauDeJeu plateau;
                 btn_col_5ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_col_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 110, -1, -1));
+        getContentPane().add(btn_col_5, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 30, -1, -1));
 
         btn_col_0.setText("1");
         btn_col_0.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +194,7 @@ PlateauDeJeu plateau;
                 btn_col_0ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_col_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 110, -1, -1));
+        getContentPane().add(btn_col_0, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 30, -1, -1));
 
         btn_col_1.setText("2");
         btn_col_1.addActionListener(new java.awt.event.ActionListener() {
@@ -202,7 +202,7 @@ PlateauDeJeu plateau;
                 btn_col_1ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_col_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(146, 110, -1, -1));
+        getContentPane().add(btn_col_1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 30, -1, -1));
 
         btn_col_2.setText("3");
         btn_col_2.addActionListener(new java.awt.event.ActionListener() {
@@ -210,7 +210,7 @@ PlateauDeJeu plateau;
                 btn_col_2ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_col_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(242, 110, -1, -1));
+        getContentPane().add(btn_col_2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 30, -1, -1));
 
         btn_col_3.setText("4");
         btn_col_3.addActionListener(new java.awt.event.ActionListener() {
@@ -218,7 +218,7 @@ PlateauDeJeu plateau;
                 btn_col_3ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_col_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(338, 110, -1, -1));
+        getContentPane().add(btn_col_3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 30, -1, -1));
 
         btn_col_6.setText("7");
         btn_col_6.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +226,7 @@ PlateauDeJeu plateau;
                 btn_col_6ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_col_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(626, 110, -1, -1));
+        getContentPane().add(btn_col_6, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, -1, -1));
 
         btn_col_4.setText("5");
         btn_col_4.addActionListener(new java.awt.event.ActionListener() {
@@ -234,9 +234,9 @@ PlateauDeJeu plateau;
                 btn_col_4ActionPerformed(evt);
             }
         });
-        getContentPane().add(btn_col_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(434, 110, -1, -1));
+        getContentPane().add(btn_col_4, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 30, -1, -1));
 
-        setBounds(0, 0, 1136, 743);
+        setBounds(0, 0, 1046, 758);
     }// </editor-fold>//GEN-END:initComponents
 
     private void nom_Joueur1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nom_Joueur1ActionPerformed
@@ -300,9 +300,41 @@ PlateauDeJeu plateau;
     }//GEN-LAST:event_btn_col_6ActionPerformed
 
     public boolean jouerDansColonne(int indice_colonne){
+        panneau_grille.repaint();
+        if (joueurCourant.nombreDeJetons() > 0) { //si joueur a jetons encore
+                    
+                    Jeton joué = joueurCourant.jouerJeton();
+                    boolean colonnerem = plateau.colonneRemplie(indice_colonne); //check si colonne vide
+                    if (colonnerem == false) {
+                        int lig = plateau.ajouterJetonsDansColonne(joueurCourant, indice_colonne); //si colonne vide on pose jeton
+
+                        boolean res = plateau.presenceTrouNoir(lig, indice_colonne);
+                        if (res == true) {
+                            plateau.supprimerTrouNoir(lig, indice_colonne);
+                            plateau.supprimerJeton(lig, indice_colonne);
+                            
+
+                        }
+                        boolean res2 = plateau.presenceDesintegrateur(lig, indice_colonne);
+                        if (res2 == true) {
+                            plateau.supprimerDesintegrateur(lig, indice_colonne);
+                            plateau.supprimerJeton(lig, indice_colonne);
+                            
+
+                        }
+
+                    } else {
+                         System.out.println("Colonne pleine, en choisir une autre");
+                    }
+                    
         return true;
 
     }
+    return false;
+        
+    }
+    
+    
     public void joueurSuivant(){
     
     if (joueurCourant== listeJoueurs [0]){

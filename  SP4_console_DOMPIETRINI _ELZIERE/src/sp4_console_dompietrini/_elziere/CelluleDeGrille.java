@@ -10,7 +10,7 @@ package sp4_console_dompietrini._elziere;
  */
 public class CelluleDeGrille {
     
-    Jeton jetonCourant;
+    public Jeton jetonCourant;
     boolean avoirTrouNoir;
     boolean avoirDesintegrateur;
     
