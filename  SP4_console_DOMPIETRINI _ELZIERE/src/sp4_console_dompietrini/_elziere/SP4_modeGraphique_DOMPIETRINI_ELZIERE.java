@@ -301,6 +301,8 @@ PlateauDeJeu plateau;
 
     public boolean jouerDansColonne(int indice_colonne){
         panneau_grille.repaint();
+        
+        
         if (joueurCourant.nombreDeJetons() > 0) { //si joueur a jetons encore
                     
                     Jeton joué = joueurCourant.jouerJeton();
@@ -318,15 +320,16 @@ PlateauDeJeu plateau;
                         boolean res2 = plateau.presenceDesintegrateur(lig, indice_colonne);
                         if (res2 == true) {
                             plateau.supprimerDesintegrateur(lig, indice_colonne);
-                            plateau.supprimerJeton(lig, indice_colonne);
+
                             
 
                         }
 
-                    } else {
-                         System.out.println("Colonne pleine, en choisir une autre");
-                    }
+                    } 
                     
+        lbl_j1_desint.setText(listeJoueurs[0].nombreDesintegrateurs+"");
+        lbl_j2_desint.setText(listeJoueurs[1].nombreDesintegrateurs+"");
+        
         return true;
 
     }
