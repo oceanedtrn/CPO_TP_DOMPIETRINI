@@ -109,9 +109,9 @@ PlateauDeJeu plateau;
                 btn_startActionPerformed(evt);
             }
         });
-        panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 60, -1, 40));
+        panneau_creation_partie.add(btn_start, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 70, -1, 40));
 
-        getContentPane().add(panneau_creation_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 120, 290, 100));
+        getContentPane().add(panneau_creation_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 30, 290, 120));
 
         panneau_info_joueur.setBackground(new java.awt.Color(204, 255, 204));
         panneau_info_joueur.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -157,7 +157,7 @@ PlateauDeJeu plateau;
         lbl_j2_couleur.setText("couleurjoueur2 :");
         panneau_info_joueur.add(lbl_j2_couleur, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 180, -1, -1));
 
-        getContentPane().add(panneau_info_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 240, 290, 270));
+        getContentPane().add(panneau_info_joueur, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 170, 290, 270));
 
         panneau_info_partie.setBackground(new java.awt.Color(204, 255, 204));
         panneau_info_partie.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -176,9 +176,9 @@ PlateauDeJeu plateau;
         jTextArea1.setRows(5);
         message.setViewportView(jTextArea1);
 
-        panneau_info_partie.add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
+        panneau_info_partie.add(message, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 80, -1, -1));
 
-        getContentPane().add(panneau_info_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 530, 300, 170));
+        getContentPane().add(panneau_info_partie, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 460, 300, 180));
 
         btn_col_5.setText("6");
         btn_col_5.addActionListener(new java.awt.event.ActionListener() {
@@ -320,15 +320,21 @@ PlateauDeJeu plateau;
                         boolean res2 = plateau.presenceDesintegrateur(lig, indice_colonne);
                         if (res2 == true) {
                             plateau.supprimerDesintegrateur(lig, indice_colonne);
-
+                            joueurCourant.obtenirDesintegrateur();
                             
-
+                        if (res == true && res2 == true){
+                            plateau.supprimerTrouNoir(lig, indice_colonne);
+                            plateau.supprimerJeton(lig, indice_colonne);
+                            plateau.supprimerDesintegrateur(lig, indice_colonne);
+                            joueurCourant.obtenirDesintegrateur();
+                        }
                         }
 
                     } 
                     
         lbl_j1_desint.setText(listeJoueurs[0].nombreDesintegrateurs+"");
         lbl_j2_desint.setText(listeJoueurs[1].nombreDesintegrateurs+"");
+        
         
         return true;
 
