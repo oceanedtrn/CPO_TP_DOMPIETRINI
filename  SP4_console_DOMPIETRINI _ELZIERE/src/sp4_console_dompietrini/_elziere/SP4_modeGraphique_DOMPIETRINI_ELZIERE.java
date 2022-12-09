@@ -301,6 +301,7 @@ PlateauDeJeu plateau;
 
     public boolean jouerDansColonne(int indice_colonne){
         panneau_grille.repaint();
+         
         
         
         if (joueurCourant.nombreDeJetons() > 0) { //si joueur a jetons encore
